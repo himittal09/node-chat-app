@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
+    "testWatch": "nodemon --exec 'npm test'"
   },
   "engines": {
     "node": "6.11.0"
@@ -16,7 +17,11 @@
     "express": "^4.15.3",
     "socket.io": "^2.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mittal01091997/node-chat-app.git"
