@@ -1,7 +1,7 @@
 {
   "name": "chat-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app lets you communicate between client and server",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
@@ -13,6 +13,16 @@
   "author": "Himanshu Mittal",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
-  }
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mittal01091997/node-chat-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mittal01091997/node-chat-app/issues"
+  },
+  "homepage": "https://github.com/mittal01091997/node-chat-app#readme"
 }
