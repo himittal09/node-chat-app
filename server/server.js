@@ -35,12 +35,17 @@ io.on('connection', (socket) => {
 
     socket.on('createMessage', function (message, callback) {
         console.log('createMessage', message);
-        io.emit('newMessage', generateMessage(message.from, message.text));
+
+        var user = users.getUser(socket.id);
+
+        io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
         callback('');
     });
 
     socket.on('createLocationMessage', function (location) {
-        io.emit('newLocationMessage', generateLocationMessage('Admin', location));
+        var user = users.getUser(socket.id);
+
+        io.to(user.room).emit('newLocationMessage', generateLocationMessage(user.name, location));
     });
 
     socket.on('disconnect', () => {

@@ -71,10 +71,12 @@ socket.on('updateUserList', (users) => {
 jQuery('#message_form').on('submit', function (e) {
     e.preventDefault();
     var messageTextBox = jQuery('[name=message]');
-    if (messageTextBox.val() == '')
+    if (messageTextBox.val() == '' || messageTextBox.val().trim().length == 0) {
+        messageTextBox.val() = '';
         return;
+    }
+        
     socket.emit('createMessage', {
-        from: 'User',
         text: messageTextBox.val()
     }, function () {
         messageTextBox.val('');
@@ -97,6 +99,6 @@ locationButton.on('click', function () {
         locationButton.removeAttr('disabled').text('Send Location');
     }, function (error) {
         locationButton.removeAttr('disabled').text('Send Location');
-        alert('Error in sending location', error);
+        alert(`Error in sending location: ${error.message}`);
     });
 });
