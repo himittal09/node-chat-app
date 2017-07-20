@@ -11,7 +11,7 @@ function generateMessage (from, text) {
 function generateLocationMessage (from, location) {
     return {
         from,
-        url: `https://www.google.com/maps?q=${location.latitude},${location.longitude}`,
+        url: `//www.google.com/maps/embed/v1/place?q=${location.latitude},${location.longitude}&zoom=17&key=AIzaSyAteLJQbF_gHqvnCW7ofXzOrjkGLIwMho4`,
         createdAt: location.timestamp
     };
 }

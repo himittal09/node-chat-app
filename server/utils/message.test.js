@@ -14,7 +14,8 @@ describe('generateMessage', () => {
 describe('generateLocationMessage', () => {
     it('should create correct location object', () => {
         var from = 'testUser';
-        var url = 'https://www.google.com/maps?q=1,1';
+        var url = '//www.google.com/maps/embed/v1/place?q=1,1&zoom=17&key=AIzaSyAteLJQbF_gHqvnCW7ofXzOrjkGLIwMho4';
+        
         var message = generateLocationMessage(from, {
             latitude: 1,
             longitude: 1,
